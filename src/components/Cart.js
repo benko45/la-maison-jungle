@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import '../styles/Cart.css'
+import CartElement from './CartElement'
 
 function Cart({ cart, updateCart }) {
 	const [isOpen, setIsOpen] = useState(true)
@@ -25,7 +26,11 @@ function Cart({ cart, updateCart }) {
 					<ul>
 						{cart.map(({ name, price, amount }, index) => (
 							<div key={`${name}-${index}`}>
-								{name} {price}€ x {amount}
+								<CartElement
+									name={name}
+									price={price}
+									amount={amount}
+								/>
 							</div>
 						))}
 					</ul>
