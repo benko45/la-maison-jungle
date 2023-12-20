@@ -30,6 +30,8 @@ function Cart({ cart, updateCart }) {
 									name={name}
 									price={price}
 									amount={amount}
+									cart={cart}
+									updateCart={updateCart}
 								/>
 							</div>
 						))}
