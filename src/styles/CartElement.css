@@ -1,0 +1,48 @@
+.cartItem {
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.boutonsCart {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    column-gap: 20px;
+}
+
+.boutonPlus {
+    background-color: transparent;
+    background-image: url('../assets/plus.png');
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+}
+.boutonPlus:hover {
+    background-color: transparent;
+    transform: scale(1.4);
+}
+
+.boutonMoins {
+    background-color: transparent;
+    background-image: url('../assets/moins.png');
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+}
+.boutonMoins:hover {
+    background-color: transparent;
+    transform: scale(1.4);
+}
+
+.boutonSupprimer {
+    background-color: transparent;
+    background-image: url('../assets/croix.png');
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+}
+.boutonSupprimer:hover {
+    background-color: transparent;
+    transform: scale(1.4);
+}
+

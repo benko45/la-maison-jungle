@@ -49,10 +49,14 @@ function CartElement({name, price, amount, cart, updateCart}){
 
     return (
         isShown && ( <div>
-			            {name} {price}€ x {amount} <br/>
-                        <button onClick={() => addToCart()}>➕</button>
-                        <button onClick={() => removerFromCart()}>➖</button>
-                         <button onClick={() => deleteLine()}>🗑️Supprimer</button>
+                        <div className="cartItem">
+                            {name} : {price}€ x {amount}
+                        </div>
+                        <div className="boutonsCart">
+                            <button className="boutonPlus" onClick={() => addToCart()}></button>
+                            <button className="boutonMoins" onClick={() => removerFromCart()}></button>
+                            <button className="boutonSupprimer"onClick={() => deleteLine()}></button>
+                         </div>
 		            </div>
                     )   
     )
