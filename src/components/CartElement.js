@@ -9,12 +9,20 @@ function CartElement({name, price, amount, cart, updateCart}){
         updateCart(cart.filter((plant) => plant.name !== name))
     }
     function addToCart(){
-        const cartFilteredCurrentPlant = cart.filter(
-            (plant) => plant.name !== name
-        )
-        updateCart([
-            ...cartFilteredCurrentPlant,
-            { name, price, amount: amount + 1 }])
+        let newCart = []
+        cart.forEach((object) => {
+            if(object.name !== name){
+                newCart.push(object)
+            } else {
+                const entries = new Map([
+                    ['name', name],
+                    ['price', price],
+                    ['amount', amount + 1],
+                ])
+                newCart.push(Object.fromEntries(entries))
+            }
+        })
+        updateCart(newCart)
     }
 
     function removerFromCart()
@@ -22,12 +30,20 @@ function CartElement({name, price, amount, cart, updateCart}){
         if(amount === 1){
             deleteLine()
         } else {
-            const cartFilteredCurrentPlant = cart.filter(
-                (plant) => plant.name !== name
-            )
-            updateCart([
-                ...cartFilteredCurrentPlant,
-                { name, price, amount: amount - 1 }])
+            let newCart = []
+            cart.forEach((object) => {
+                if(object.name !== name){
+                    newCart.push(object)
+                } else {
+                    const entries = new Map([
+                        ['name', name],
+                        ['price', price],
+                        ['amount', amount - 1],
+                    ])
+                    newCart.push(Object.fromEntries(entries))
+                }
+            })
+            updateCart(newCart)
         }
     }
 
